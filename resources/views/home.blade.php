@@ -291,7 +291,9 @@
 						<div class="tab active-tab" id="pkg-tab-1">
 							<div class="row clearfix justify-content-center">
 								<!--Block-->
-                                @foreach($flights as $flight)
+
+
+            @foreach($flights as $flight)
 								<div class="package-block alt col-lg-4 col-md-6 col-sm-12">
                                 
                                 <div class="inner-box">
@@ -318,7 +320,7 @@
 										</div>
 									</div>
 								</div>
-                                @endforeach
+              @endforeach
 
 							</div>
 						</div>
@@ -328,6 +330,53 @@
 				</div>
 			</div>
 		</div>
+<!-- Testimonials Section -->
+ <div class="testimonials-section">
+			<div class="auto-container">
+				<div class="title-box centered">
+					<div class="subtitle">Testimonials</div>
+					<h2><span>What Travelers Say</span></h2>
+				</div>
+
+				<div class="carousel-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+					<div class="testimonial-carousel">
+
+                    
+					@foreach($testimonials as $testimonial)
+											<div class="testi-block-one">
+							<div class="inner-box">
+								<div class="icon">
+									<span class="flaticon-left-quote"></span>
+								</div>
+								
+								<p class="travilo-text">{{$testimonial->feedback_message}}
+								</p>
+								<div class="info">
+									<div class="image">
+										<img src="{{ asset($testimonial->image) }}" alt="Testimonial 1">
+									</div>
+									<div class="rating">
+										<div class="stars">
+											<i class="fa-solid fa-star"></i>
+											<i class="fa-solid fa-star"></i>
+											<i class="fa-solid fa-star"></i>
+											<i class="fa-solid fa-star"></i>
+											<i class="fa-solid fa-star"></i>
+										</div>
+									</div>
+									<div class="name">{{$testimonial->user_name}}</div>
+								</div>
+							</div>
+						</div><!-- .testi-block-one -->
+						@endforeach
+
+
+					</div>
+				</div>
+			</div>
+		</div> 
+
+
 
         
 		<!--Main Footer-->

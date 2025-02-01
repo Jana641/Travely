@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\TestimonialController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,6 @@ use App\Http\Controllers\FlightController;
 */
 
 Route::get('/', [FlightController::class, 'index']);
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
