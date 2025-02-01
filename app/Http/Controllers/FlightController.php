@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 use App\Models\Flight; 
+use App\Models\Testimonial;
 
 use Illuminate\Http\Request;
 
 class FlightController extends Controller
 {
-public function index(){
-
-    $flights = Flight::all();
-    return view('home')->with('flights' , $flights);
-
-
-}
+    public function index(){
+        $flights = Flight::all();
+        $testimonials = Testimonial::all();
+    
+        return view('home', compact('flights', 'testimonials')); // ✅ Correct way
+    }
+    
 
 //admin role
 public function create(){
