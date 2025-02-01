@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str; // Import Str helper
 
 class FlightSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class FlightSeeder extends Seeder
     public function run(): void
     {
         DB::table('flights')->insert([
-            'id' => 1,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Italy',
             'short_description' => 'Explore the beaches and temples of Bali.',
             'guests' => 100,
@@ -32,7 +33,7 @@ class FlightSeeder extends Seeder
         ]);
         
         DB::table('flights')->insert([
-            'id' => 2,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Dubai',
             'short_description' => 'Discover the glamour and modern wonders of Dubai.',
             'guests' => 150,
@@ -50,7 +51,7 @@ class FlightSeeder extends Seeder
         ]);
 
         DB::table('flights')->insert([
-            'id' => 3,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' =>'Australia',
             'short_description' => 'Explore the natural wonders and vibrant cities of Australia.',
             'guests' => 120,
@@ -67,7 +68,7 @@ class FlightSeeder extends Seeder
         ]);
 
         DB::table('flights')->insert([
-            'id' => 4,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Istanbul',
             'short_description' => 'Experience the rich history and vibrant culture of Istanbul.',
             'guests' => 100,
@@ -84,7 +85,7 @@ class FlightSeeder extends Seeder
         ]);
         
         DB::table('flights')->insert([
-            'id' => 5,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Maldives',
             'short_description' => 'Relax in the tropical paradise of the Maldives.',
             'guests' => 50,
@@ -101,7 +102,7 @@ class FlightSeeder extends Seeder
         ]);
         
         DB::table('flights')->insert([
-            'id' => 6,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'New York',
             'short_description' => 'Discover the energy and iconic landmarks of New York City.',
             'guests' => 200,
@@ -118,7 +119,7 @@ class FlightSeeder extends Seeder
         ]);
         
         DB::table('flights')->insert([
-            'id' => 7,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Germany',
             'short_description' => 'Experience the rich history and culture of Germany.',
             'guests' => 150,
@@ -135,7 +136,7 @@ class FlightSeeder extends Seeder
         ]);
 
         DB::table('flights')->insert([
-            'id' => 8,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Egypt',
             'short_description' => 'Discover the ancient wonders and vibrant culture of Egypt.',
             'guests' => 200,
@@ -151,7 +152,7 @@ class FlightSeeder extends Seeder
             'media_gallery' => json_encode(['images/resources/destinations/giza.jpg', 'images/resources/destinations/luxor-temple.jpg']),
         ]);
         DB::table('flights')->insert([
-            'id' => 9,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'Morocco',
             'short_description' => 'Experience the captivating charm and vibrant markets of Morocco.',
             'guests' => 150,
@@ -168,7 +169,7 @@ class FlightSeeder extends Seeder
         ]);
         
         DB::table('flights')->insert([
-            'id' => 10,
+            'id' => Str::uuid()->toString(), // Generate UUID
             'name' => 'United Kingdom',
             'short_description' => 'Explore the historic landmarks and vibrant culture of the UK.',
             'guests' => 150,

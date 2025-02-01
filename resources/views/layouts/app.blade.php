@@ -14,15 +14,31 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @viteReactRefresh
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+<style>
+   
+li{
+    margin:5px;
+    margin-top:10px;
+ 
+}
+
+.nav2{
+    display: flex;
+        flex-direction:row;
+        justify-content: space-between; 
+        margin-top:9px; 
+  
+}
+
+    </style>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                TickTock 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -30,13 +46,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+                    <ul class="navbar-nav ms-auto" >
+                        <div class="nav2">
+                    <li ><a href="#home" style="text-decoration: none; color:black ;"  >Home</a></li>
+                    <li ><a href="#home" style="text-decoration: none; color:black ;">Shop</a></li>
+                    <li ><a href="#home" style="text-decoration: none; color:black ;">About us</a></li>
+</div>
+                    <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
