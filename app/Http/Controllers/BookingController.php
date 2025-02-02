@@ -19,6 +19,8 @@ class BookingController extends Controller
   }
   public function store(Request $request){
 
+    
+
     $additional_guide_amount = 0;
     $internet_amount = 0 ;
     $photography_amount = 0;

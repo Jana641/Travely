@@ -23,12 +23,16 @@ Auth::routes();
 Route::get('/home', [FlightController::class, 'index']);
 Route::get('/flightPage/{id}', [App\Http\Controllers\FlightController::class, 'show']);
 
-Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('bookings', BookingController::class);
+
+// Route::middleware(['auth', 'check.auth'])->group(function () {
+//   // Admin routes
+//   Route::resource('bookings', BookingController::class);
+// });
+
