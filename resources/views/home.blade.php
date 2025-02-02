@@ -405,8 +405,6 @@
 						<div class="row clearfix">
 							<div class="footer-column col-xl-4 col-lg-3 col-md-6 col-sm-12">
 								<div class="footer-widget about-widget">
-									<div class="footer-logo"><a href="index-2.html" title="Travely"><img
-												src="./images/logo-white.png" alt="" title="Travilo"></a></div>
 									<div class="footer-info">
 										<ul class="info">
 											<li class="address"><a href="#"><i class="icon fa fa-map-marker-alt"></i>
@@ -414,7 +412,7 @@
 											<li class="phone"><a href="tel:+96899999000"><i
 														class="icon fa-solid fa-phone"></i>
 													+96899999000</a></li>
-											<li class="email"><a href="mailto:hello@travilo.com"><i
+											<li class="email"><a href="mailto:hello@travely.com"><i
 														class="icon fa fa-envelope"></i>
 													hello@travely.com</a></li>
 										</ul>

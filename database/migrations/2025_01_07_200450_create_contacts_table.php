@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->timestamps();
-            $table->uuid('user_id');
+            $table->unsignedInteger('user_id'); // Updated to unsigned integer
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->string('email');

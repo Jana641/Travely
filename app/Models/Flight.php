@@ -46,4 +46,5 @@ class Flight extends Model
     public function getBooks(){
         return $this->hasMany(Booking::class);
     }
+    
 }

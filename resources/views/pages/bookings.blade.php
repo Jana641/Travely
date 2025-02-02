@@ -13,7 +13,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Travilo - Tour Single</title>
+	<title>Travely - Tour Single</title>
 
 	<link href="assets/images/favicon.png" rel="shortcut icon" type="image/x-icon">
 
@@ -96,212 +96,45 @@
 		</div>
 		<!-- / Hidden Bar -->
 
-		<!-- Banner Section -->
-		<div class="tour-single-banner">
-			<div class="image-layer" style="background-image: url('{{ asset('images/resources/featured/featured-4.jpg') }}');">
-			</div>
-			<div class="auto-container">
-				<div class="content-box">
-					<div class="content clearfix">
-						<div class="t-type">
-							<div class="icon"><img src="{{asset('./images/icons/t-icon-1.png')}}" alt=""></div>
-							Tour Type <br><strong>Adventure</strong>
-						</div>
-						<div class="links">
-							<ul class="clearfix">
-								<li><a href="#">Gallery <i class="far fa-images"></i></a></li>
-								<li><a href="#">Video <i class="far fa-video-camera"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--End Banner Section -->
+    <div class="container">
+    <h2 class="mb-4">Bookings</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Flight</th>
+                <th>Adult Tickets Number</th>
+                <th>Kid Tickets Number</th>
+                <th>Child Tickets Number</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($bookings as $booking)
+            <tr>
+            <td>{{ $booking->flight->name }}</td>
+            <td>{{ $booking->adult_ticket }}</td>
+            <td>{{ $booking->kid_ticket }}</td>
+            <td>{{ $booking->child_ticket }}</td>
+            <td>{{ $booking->total_price }}</td>
 
-		<!--Default Single Container-->
-		<div class="dsp-container tour-single">
-			<div class="auto-container">
-				<div class="row clearfix">
 
-					<!--Content Side-->
-					<div class="content-side col-xl-8 col-lg-12 col-md-12 col-sm-12">
-						<div class="content-inner">
-
-							<div class="sp-header">
-								<div class="loc-rat clearfix">
-									<div class="rating"><a href="#" class="theme-btn"><i class="fa-solid fa-star"></i>
-											<strong>{{$flight->rate}}</strong></a></div>
-								</div>
-								<h1>{{$flight->name}}</h1>
-								<div class="info clearfix">
-									<div class="departure_time"><i class="fa-solid fa-clock"></i>departure time: {{$flight->departure_time}}</div>
-									<div class="return_time"><i class="fa-solid fa-clock"></i>return date: {{$flight->return_date}}</div>
-
-									<div class="guests"><i class="fa-solid fa-user"></i>guests: {{$flight->guests}}</div>
-								</div>
-							</div>
-
-							<div class="upper-content">
-								<div class="text-content">
-									<h3>Flight Description</h3>
-									<p>{{$flight->long_description}}</p>
-									<br>
-									<h5>Highlights</h5>
-									<ul class="styled-list-one">
-									@foreach ($flight->highlights as $highlight)
-                 <li>{{ $highlight}}</li>
-                    @endforeach
-									</ul>
-								</div>
-								
-							</div>
-
-					
-						</div>
-					</div>
-
-					<!-- Book a flight -->
-					<!--Sidebar Side-->
-					<div class="sidebar-side col-xl-4 col-lg-8 col-md-12 col-sm-12">
-						<div class="sidebar-inner">
-							<div class="dsp-widget t-book-widget alt-margin">
-								<div class="inner-box">
-									<div class="t-book-header">
-										<span class="st-txt">Start <br>From</span>
-										<span class="amount">${{$flight->price}}</span>
-										<span class="qty">/ Per Person</span>
-									</div>
-									<div class="lower-box">
-										<div class="form-box site-form">
-											<form method="post" action="{{ route('bookings.store') }}">
+            <td>
+                    <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST" style="display:inline;">
 											@csrf
-												<div class="fields">
-													<div class="form-group">
-														<div class="field-label">Date</div>
-														<div class="field-inner">
-														<input type="hidden" name="flight_id" value="{{$flight->id}}" />
-														<input class="datepicker" name="field-name"
-																value="{{$flight->departure_time}}"  readonly>
+											@method('DELETE')
+											<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this booking?')">Delete</button>
+									</form>
 
-																<!-- <input type="date" name="field-name" value="{{ $flight->departure_time }}" readonly> -->
-
-															<i class="alt-icon fa fa-calendar-alt"></i>
-														</div>
-													</div>
-												</div>
-												<h6>Tickets</h6>
-												<div class="tickets">
-													<div class="ticket-block clearfix">
-														<div class="tick-ttl">Adults (18+ years)</div>
-														<div class="tick-sel">
-															<div class="quantity-box">
-																<div class="item-quantity">
-																	<input class="qty-spinner" type="text" value="1"
-																		name="adult_quantity">
-																</div>
-															</div>
-														</div>
-
-													</div>
-													<div class="ticket-block clearfix">
-														<div class="tick-ttl">Kids (12+ years)</div>
-														<div class="tick-sel">
-															<div class="quantity-box">
-																<div class="item-quantity">
-																	<input class="qty-spinner" type="text" value="1"
-																		name="kid_quantity">
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="ticket-block clearfix">
-														<div class="tick-ttl">Children (3+ years)</div>
-														<div class="tick-sel">
-															<div class="quantity-box">
-																<div class="item-quantity">
-																	<input class="qty-spinner" type="text" value="1"
-																		name="child_quantity">
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<h6>Additional Service</h6>
-												<div class="add-ser">
-    <ul>
-        <li>
-            <div class="cb-block">
-                <input type="checkbox" name="cb-1" id="cb-1">
-                <label class="clearfix" for="cb-1">
-                    <span class="txt">Additional Guide</span>
-                    <span class="amount">50</span> 
-                </label>
-                <input type="hidden" name="additional_guide_price" value="50">
-            </div>
-        </li>
-        <li>
-            <div class="cb-block">
-                <input type="checkbox" name="cb-2" id="cb-2">
-                <label class="clearfix" for="cb-2">
-                    <span class="txt">Internet</span>
-                    <span class="amount">30</span>
-                </label>
-                <input type="hidden" name="internet_price" value="30">
-            </div>
-        </li>
-        <li>
-            <div class="cb-block">
-                <input type="checkbox" name="cb-3" id="cb-3">
-                <label class="clearfix" for="cb-3">
-                    <span class="txt">Photography</span>
-                    <span class="amount">90</span>
-                </label>
-                <input type="hidden" name="photography_price" value="90">
-            </div>
-        </li>
-    </ul>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
-
-												<div class="proceed-link"><button type="submit"
-														class="theme-btn btn-style-two"><span>Proceed to
-															Book</span></button></div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!--Widget-->
-							<div class="dsp-widget get-help-widget">
-								<div class="inner">
-									<h6>Get Help</h6>
-									<h3>Need Help to Book?</h3>
-									<p class="travilo-text">Our dedicated team of travel experts is here to assist you
-										every step of the
-										way, ensuring a seamless and unforgettable journey.</p>
-									<div class="call-to">
-										<a href="tel:+9689999000"><i class="icon fa-solid fa-phone"></i> Call Us <span
-												class="nmbr">+968
-												9999 9000</span></a>
-									</div>
-								</div>
-							</div>
-
-							<!--Widget-->
-							<div class="dsp-widget similar-widget">
-								
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
 	
 		<!--Main Footer-->
-     
+	     
 		<!--Main Footer-->
 		<footer class="main-footer style-two">
 			<div class="upper-section">
@@ -421,6 +254,7 @@
 			</div>
 
 		</footer>
+
 
 
 	</div>

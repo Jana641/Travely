@@ -20,15 +20,15 @@ use App\Http\Controllers\BookingController;
 Route::get('/', [FlightController::class, 'index']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [FlightController::class, 'index']);
 Route::get('/flightPage/{id}', [App\Http\Controllers\FlightController::class, 'show']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('bookings', BookingController::class);

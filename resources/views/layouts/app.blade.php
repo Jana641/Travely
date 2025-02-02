@@ -53,9 +53,9 @@ li{
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto" >
                         <div class="nav2">
-                    <li ><a href="#home" style="text-decoration: none; color:black ; "  >Home</a></li>
-                    <li ><a href="#home" style="text-decoration: none; color:black ;">Shop</a></li>
-                    <li ><a href="#home" style="text-decoration: none; color:black ;">About us</a></li>
+                    <li ><a href="#home" style="text-decoration: none; color:black ; margin:20px"  >Home</a></li>
+                    <li ><a href="bookings" style="text-decoration: none; color:black ;margin:20px">Bookings</a></li>
+                    <li ><a href="#home" style="text-decoration: none; color:black ;margin:20px">About us</a></li>
 </div>
                     <!-- Authentication Links -->
                         @guest
