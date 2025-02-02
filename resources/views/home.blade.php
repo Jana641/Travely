@@ -33,8 +33,8 @@
 	<link href="./css/lib/jquery-ui.min.css" rel="stylesheet">
 	<link href="./css/lib/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="./css/custom-animate.css" rel="stylesheet">
-	<link href="./css/style.css" rel="stylesheet">
-	<link href="./css/responsive.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/responsive.css" rel="stylesheet">
     
 </head>
 
@@ -298,7 +298,8 @@
                                 
                                 <div class="inner-box">
 										<div class="image-box">
-											<div class="image"><a href="hotel-single.html"><img
+											<div class="image"><a href="{{ url('/flightPage/' . $flight->id) }}">
+											<img
 														src="{{ asset($flight->image) }}"
 														alt="Maldives Hotel"></a></div>
 											<div class="b-title featured"><span>  {{ $flight->name }}</span></div>
@@ -405,7 +406,7 @@
 							<div class="footer-column col-xl-4 col-lg-3 col-md-6 col-sm-12">
 								<div class="footer-widget about-widget">
 									<div class="footer-logo"><a href="index-2.html" title="Travely"><img
-												src="assets/images/logo-white.png" alt="" title="Travilo"></a></div>
+												src="./images/logo-white.png" alt="" title="Travilo"></a></div>
 									<div class="footer-info">
 										<ul class="info">
 											<li class="address"><a href="#"><i class="icon fa fa-map-marker-alt"></i>
@@ -471,9 +472,9 @@
 											real-time updates, and
 											exclusive offers on the go.</p>
 										<div class="links">
-											<div class="link"><a href="#"><img src="assets/images/apple-store.png"
+											<div class="link"><a href="#"><img src="./images/apple-store.png"
 														alt=""></a></div>
-											<div class="link"><a href="#"><img src="assets/images/play-store.png"
+											<div class="link"><a href="#"><img src="./images/play-store.png"
 														alt=""></a></div>
 										</div>
 									</div>
@@ -506,7 +507,7 @@
 
 	<!--Scroll to top-->
 	<div class="scroll-to-top scroll-to-target" data-target="html">
-		<span class="icon"><img src="assets/images/icons/arrow-up.svg" alt="" title="Go To Top"></span>
+		<span class="icon"><img src="./images/icons/arrow-up.svg" alt="" title="Go To Top"></span>
 	</div>
 
 	<script src="./js/lib/jquery.min.js"></script>

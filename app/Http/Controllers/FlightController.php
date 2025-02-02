@@ -61,9 +61,12 @@ Cart::create([
 
 }
 
-public function show( string $id){
-$flight = Flight::find($id);
-    //  return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+public function show(string $id){
+ $flight = Flight::find($id);
+//  @dd($id);
+
+//  @dd($flight);
+    return view('flightPage')->with('flight', $flight);
 
 }
 //admin role
