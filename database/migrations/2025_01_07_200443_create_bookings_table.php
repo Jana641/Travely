@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->increments('id');
             $table->timestamps();
-            $table->uuid('user_id');
+            $table->unsignedInteger('user_id'); // Updated to unsigned integer
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->uuid('flight_id');
-            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');   
+            $table->unsignedInteger('flight_id');
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
             $table->integer('adult_ticket');
             $table->integer('kid_ticket');
             $table->integer('child_ticket');
@@ -25,8 +25,8 @@ return new class extends Migration
             $table->boolean('internet');
             $table->boolean('photograph');
             $table->decimal('total_price');
-
         });
+        
     }
 
     /**

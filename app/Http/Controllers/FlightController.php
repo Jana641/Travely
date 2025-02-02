@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Flight; 
 use App\Models\Testimonial;
+use Illuminate\Support\Str; 
 
 use Illuminate\Http\Request;
 
@@ -41,8 +42,7 @@ public function store(Request $request){
     // return redirect()->route('home')->with('info', 'Flight is already in the cart.');
 }
 
-Cart::create([
-    'id' => Str::uuid(),
+Flight::create([
     'flight_name' => $flight_name,
     'flight_short_description' => $flight_short_description,
     'flight_guests' => $flight_guests,
@@ -61,9 +61,12 @@ Cart::create([
 
 }
 
-public function show( string $id){
-$flight = Flight::find($id);
-    //  return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+public function show(string $id){
+ $flight = Flight::find($id);
+//  @dd($id);
+
+//  @dd($flight);
+    return view('flightPage')->with('flight', $flight);
 
 }
 //admin role

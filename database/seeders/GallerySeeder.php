@@ -34,7 +34,7 @@ class GallerySeeder extends Seeder
         ]);
 
         DB::table('galleries')->insert([
-            'id' => 3,
+            'id' => 4,
             'name' => 'London',
             'image' => 'images/resources/gallery/gallery-4.jpg',
             'description' => '350 Tour Packages', 

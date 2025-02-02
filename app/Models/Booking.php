@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\UUID;
 
 class Booking extends Model
 {
-    use HasFactory, UUID;
+    use HasFactory;
     protected $fillable =[
-        'flight_id',
+        'id',
         'user_id',
-        'date',
+        'flight_id',
         'adult_ticket',
         'kid_ticket',
         'child_ticket',
@@ -30,7 +29,7 @@ class Booking extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getFlight(){
+    public function flight(){
         return $this->belongsTo(Flight::class);
     }
 }

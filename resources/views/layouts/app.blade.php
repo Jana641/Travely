@@ -19,17 +19,18 @@
 <style>
    
 li{
-    margin:5px;
+    margin:10px;
     margin-top:10px;
- 
 }
 
 .nav2{
     display: flex;
-        flex-direction:row;
-        justify-content: space-between; 
-        margin-top:9px; 
-  
+    flex-direction:row;
+    justify-content: space-between; 
+    margin-top: 9px;       
+}
+.navbar-nav{
+    gap: 10px;
 }
 
     </style>
@@ -38,7 +39,7 @@ li{
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                TickTock 
+                Travely 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -52,9 +53,9 @@ li{
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto" >
                         <div class="nav2">
-                    <li ><a href="#home" style="text-decoration: none; color:black ;"  >Home</a></li>
-                    <li ><a href="#home" style="text-decoration: none; color:black ;">Shop</a></li>
-                    <li ><a href="#home" style="text-decoration: none; color:black ;">About us</a></li>
+                    <li ><a href="#home" style="text-decoration: none; color:black ; margin:20px"  >Home</a></li>
+                    <li ><a href="bookings" style="text-decoration: none; color:black ;margin:20px">Bookings</a></li>
+                    <li ><a href="#home" style="text-decoration: none; color:black ;margin:20px">About us</a></li>
 </div>
                     <!-- Authentication Links -->
                         @guest
